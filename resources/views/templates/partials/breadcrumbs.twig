@@ -1,0 +1,16 @@
+<div class="col-md-12" style="padding: 0 !important;">
+  <ol class="breadcrumb">
+	{#{{ breadCrumbs | json_encode }}#}
+	{% for crumbs in breadCrumbs %}
+	  {% if crumbs.active == 'active' %}
+		<li class="{{ crumbs.active ? 'active' : '' }}">
+		  {{ crumbs.route }}
+		</li>
+	  {% else %}
+		<li>
+		  <a href="{{ path_for(crumbs.uri|e) }}">{{ crumbs.route }}</a>
+		</li>
+	  {% endif %}
+	{% endfor %}
+  </ol>
+</div>
