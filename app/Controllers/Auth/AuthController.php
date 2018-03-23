@@ -114,7 +114,7 @@ class AuthController extends Controller
           });
         
         //REDIRECT TO HOME
-        //this->router WE ACCRESS THE CONTAINER PASSED IN THE APP SECTION "home" is the setName GIVEN IN ROUTES FILE
+        //this->router WE ACCESS THE CONTAINER PASSED IN THE APP SECTION "home" is the setName GIVEN IN ROUTES FILE
         return $response->withRedirect($this->router->pathFor('home'));
         
     }
@@ -124,6 +124,7 @@ class AuthController extends Controller
     {
         
         $this->auth->logout();
+        
         return $response->withRedirect($this->router->pathFor('home'));
         
     }

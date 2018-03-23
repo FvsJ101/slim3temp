@@ -38,7 +38,7 @@ return array(
   ),
   
   'twig' => array(
-    'debug' => false,
+    'debug' => true,
   ),
   
   'csrf' => array(

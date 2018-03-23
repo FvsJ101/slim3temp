@@ -3,10 +3,12 @@
 use Slim\Flash\Messages AS Flash;
 use App\Mail\Mailer AS Mailer;
 use App\Validation\Validator AS Validator;
-use Noodlehaus\Config AS Config;
 
+use Noodlehaus\Config AS Config;
 use Slim\Csrf\Guard AS Guard;
 use RandomLib\Factory AS RandomLib;
+
+use App\Auth\Auth;
 
 //CONTAINER
 $container = $app->getContainer();
@@ -23,7 +25,8 @@ $container['config'] = function ($container) {
 $container['view'] = function ($container) {
     
     $view = new \Slim\Views\Twig(__DIR__ . '/../resources/views', array(
-      'cache' => false
+      'cache' => false,
+      'debug' => $container['config']->get('twig.debug')
     ));
     
     $view->addExtension(new Slim\Views\TwigExtension($container->router, $container->request->getUri()));
@@ -83,6 +86,12 @@ $container['randomlib'] = function ($container) {
     $factory = new RandomLib();
     
     return $factory->getMediumStrengthGenerator();
+};
+
+//AUTHENTICATION METHODS TO CHECK USER INFO
+$container['auth'] = function () {
+    
+    return new Auth;
 };
 
 //ATTACHE HOME CONTROLLER
