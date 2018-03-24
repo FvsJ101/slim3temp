@@ -97,12 +97,12 @@ $container['auth'] = function () {
 //ATTACHE HOME CONTROLLER
 $container['HomeController'] = function ($container) {
     
-    return new App\Controllers\HomeController($container);
+    return new App\Controllers\Home\HomeController($container);
 };
 
 //ATTACHE CONTACT CONTROLLER
 $container['ContactController'] = function ($container) {
     
-    return new App\Controllers\ContactController($container);
+    return new App\Controllers\Contact\ContactController($container);
 };
 

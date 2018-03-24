@@ -3,6 +3,7 @@
 use App\Middleware\ValidationErrorsMiddleware AS ValidationErrors;
 use App\Middleware\FlashMessageMiddleware AS FlashMessage;
 use App\Middleware\CsrfViewMiddleware AS Csrf;
+
 use App\Middleware\BreadCrumbs AS BreadCrumbs;
 use App\Middleware\UserAuthMiddleware AS UserAuthMiddleware;
 use App\Middleware\OldInputMiddleware AS OldInPut;

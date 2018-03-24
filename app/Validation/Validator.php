@@ -3,7 +3,6 @@
 
 namespace App\Validation;
 
-use Respect\Validation\Validator AS Respect;
 use Respect\Validation\Exceptions\NestedValidationException;
 
 class Validator
@@ -21,7 +20,8 @@ class Validator
             }
         }
         
-        //TAKE THE ERRORS AND THEN SAVE IT IN A SESSION WHERE WE CAN GET IT IN THE MIDDLEWARE VALIDATIONERRORSMIDDLEWARE
+        //TAKE THE ERRORS AND THEN SAVE IT IN A SESSION WHERE WE CAN GET
+        // IT IN THE MIDDLEWARE VALIDATION ERRORS MIDDLEWARE
         $_SESSION['formErrors'] = $this->errors;
         
         return $this;

@@ -1,8 +1,9 @@
 <?php
 
 
-namespace App\Controllers;
+namespace App\Controllers\Contact;
 
+use App\Controllers\Controller;
 use Respect\Validation\Validator AS v;
 
 class ContactController extends Controller

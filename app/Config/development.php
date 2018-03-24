@@ -9,10 +9,10 @@ return array(
   ),
   
   'db' => array(
-    'driver'    => '',
+    'driver'    => 'mysql',
     'host'      => 'localhost',
-    'database'  => '',
-    'username'  => '',
+    'database'  => 'slim3',
+    'username'  => 'root',
     'password'  => '',
     'charset'   => 'utf8',
     'collation' => 'utf8_general_ci',
